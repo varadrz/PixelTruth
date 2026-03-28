@@ -5,7 +5,11 @@ Detect AI-generated images entirely in the browser. **No API. No Server. 100% Pr
 PixelTruth is a high-performance web application designed to distinguish between authentic photographs and AI-generated imagery. By leveraging the latest in browser-based machine learning, it provides an instant, secure, and cost-free solution for image verification.
 
 ---
+# ⛶ Screen Shots
+<img width="1904" height="906" alt="Screenshot 2026-03-28 123723" src="https://github.com/user-attachments/assets/efd27aa7-d0e3-4c58-9af4-1c2e15038501" />
+<img width="1905" height="911" alt="Screenshot 2026-03-28 123619" src="https://github.com/user-attachments/assets/3a0427fc-511e-42a0-9ee0-f70d4c8a928a" />
 
+---
 ## ✨ Key Features
 
 - **🚀 100% In-Browser Inference**: No images are ever uploaded to a server. Your data stays on your device.
