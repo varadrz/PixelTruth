@@ -11,7 +11,7 @@ PixelTruth is a high-performance web application designed to distinguish between
 - **🚀 100% In-Browser Inference**: No images are ever uploaded to a server. Your data stays on your device.
 - **🧠 Advanced Vision Transformer**: Powered by the `Deep-Fake-Detector-v2` ViT model via Transformers.js.
 - **⚡ Offline-Ready**: After the initial model download (~90MB), PixelTruth works completely offline.
-- **🎯 Professional Accuracy**: Achieves ~92% accuracy on curated real/deepfake validation sets.
+- **🎯 Professional Accuracy**: Achieves ~98.84% accuracy on curated real/deepfake validation sets.
 - **💎 Premium UI**: A clean, modern interface with real-time analysis animations and high-fidelity metrics.
 
 ---
@@ -22,7 +22,7 @@ PixelTruth is a high-performance web application designed to distinguish between
 |---|---|
 | **Frontend** | [Next.js 14](https://nextjs.org/) (App Router) |
 | **ML Runtime** | [Transformers.js v3](https://huggingface.co/docs/transformers.js/) + ONNX Runtime Web |
-| **Model** | `onnx-community/Deep-Fake-Detector-v2-Model-ONNX` |
+| **Model** | `prithivMLmods/Deepfake-Detection-Exp-02-21-ONNX` |
 | **Styling** | Vanilla CSS (Modern Modules) |
 | **Architecture** | Vision Transformer (`ViT-base-patch16-224`) |
 

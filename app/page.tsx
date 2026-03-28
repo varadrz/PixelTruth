@@ -147,7 +147,7 @@ export default function Home() {
 
       const pipe = await pipeline(
         "image-classification",
-        "onnx-community/Deep-Fake-Detector-v2-Model-ONNX",
+        "prithivMLmods/Deepfake-Detection-Exp-02-21-ONNX",
         {
           // @ts-expect-error progress_callback is valid at runtime
           progress_callback: (p: { progress?: number }) => {
@@ -204,25 +204,15 @@ export default function Home() {
     try {
       const output = await pipelineRef.current(imageUrl, { topk: 2 });
 
-      // Map model labels → our labels
-      // Model outputs: "Realism" or "Deepfake"
+      // Model labels: "Deepfake" (id=0) and "Real" (id=1)
       let aiScore = 0;
       let realScore = 0;
       for (const item of output) {
         const lbl = (item.label as string).toLowerCase();
-        if (lbl.includes("deepfake") || lbl.includes("fake") || lbl.includes("ai")) {
+        if (lbl === "deepfake") {
           aiScore = item.score * 100;
-        } else {
+        } else if (lbl === "real") {
           realScore = item.score * 100;
-        }
-      }
-
-      // Normalize if needed
-      if (aiScore + realScore < 99) {
-        const total = aiScore + realScore;
-        if (total > 0) {
-          aiScore = (aiScore / total) * 100;
-          realScore = (realScore / total) * 100;
         }
       }
 
