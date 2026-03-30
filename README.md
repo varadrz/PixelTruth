@@ -62,14 +62,15 @@ The detection engine uses a **Vision Transformer (ViT)** fine-tuned on a massive
 
 ## 🌐 Deployment
 
-PixelTruth is optimized for static deployment on platforms like **Vercel**.
+PixelTruth is optimized for static deployment on **GitHub Pages**.
 
-```bash
-# Deploy with Vercel CLI
-vercel --prod
-```
+### Automated Deployment
+The included GitHub Action (`.github/workflows/deploy.yml`) will automatically build and deploy the application whenever you push to the `main` branch.
 
-*No environment variables or backend configuration required.*
+### Manual Setup
+1. Go to your repository **Settings** > **Pages**.
+2. Under **Build and deployment** > **Source**, select **GitHub Actions**.
+3. Your site will be live at `https://<username>.github.io/PixelTruth/`.
 
 ---
 
