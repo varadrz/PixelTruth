@@ -14,6 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script src="/PixelTruth/coi-serviceworker.js" async />
+      </head>
       <body>{children}</body>
     </html>
   );

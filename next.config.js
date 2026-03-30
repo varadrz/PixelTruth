@@ -2,7 +2,12 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Indicate that these packages should not be bundled by webpack
+  output: "export",
+  basePath: "/PixelTruth",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
   experimental: {
     serverComponentsExternalPackages: ["@huggingface/transformers"],
   },
@@ -18,7 +23,6 @@ const nextConfig = {
         crypto: false,
       };
       config.resolve.alias["onnxruntime-node"] = false;
-      // Alias onnxruntime-web to the .js version to avoid import.meta issues in Terser
       config.resolve.alias["onnxruntime-web"] = path.resolve(
         __dirname,
         "node_modules/onnxruntime-web/dist/ort.all.min.js"
@@ -31,17 +35,6 @@ const nextConfig = {
     });
 
     return config;
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "Cross-Origin-Embedder-Policy", value: "require-corp" },
-          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-        ],
-      },
-    ];
   },
 };
 
