@@ -10,6 +10,7 @@ PixelTruth is a high-performance web application designed to distinguish between
 <img width="1905" height="911" alt="Screenshot 2026-03-28 123619" src="https://github.com/user-attachments/assets/3a0427fc-511e-42a0-9ee0-f70d4c8a928a" />
 
 ---
+
 ## ✨ Key Features
 
 - **🚀 100% In-Browser Inference**: No images are ever uploaded to a server. Your data stays on your device.
@@ -17,6 +18,16 @@ PixelTruth is a high-performance web application designed to distinguish between
 - **⚡ Offline-Ready**: After the initial model download (~90MB), PixelTruth works completely offline.
 - **🎯 Professional Accuracy**: Achieves ~98.84% accuracy on curated real/deepfake validation sets.
 - **💎 Premium UI**: A clean, modern interface with real-time analysis animations and high-fidelity metrics.
+- **🖼️ Broad Support**: Compatible with JPG, PNG, WEBP, and GIF formats.
+
+---
+
+## 🔒 Privacy First
+
+PixelTruth is built with a **Privacy-First** architecture. Unlike other AI detection tools, PixelTruth:
+- **Never uploads your images**: All processing happens locally in your browser's memory.
+- **Has no backend**: The application is a static site; there is no server to receive or store your data.
+- **Uses local caching**: Once the model is downloaded, it is stored in your browser's IndexedDB for future use, requiring no further network activity.
 
 ---
 
@@ -36,27 +47,33 @@ PixelTruth is a high-performance web application designed to distinguish between
 
 ### Local Development
 
-1. **Install Dependencies**:
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/PixelTruth.git
+   cd PixelTruth
+   ```
+
+2. **Install Dependencies**:
    ```bash
    npm install
    ```
 
-2. **Run Development Server**:
+3. **Run Development Server**:
    ```bash
    npm run dev
    ```
 
-3. **Open Project**:
+4. **Open Project**:
    Navigate to `http://localhost:3000` in your browser.
 
 ---
 
-## 📖 Model Details
+## 📖 How It Works
 
-The detection engine uses a **Vision Transformer (ViT)** fine-tuned on a massive dataset of authentic and synthetic images.
-- **Base Model**: `google/vit-base-patch16-224-in21k`
-- **Labels**: `Realism` (Authentic) / `Deepfake` (AI Generated)
-- **Input**: RGB images, automatically processed to 224×224 resolution.
+1. **Image Preprocessing**: When you drop an image, PixelTruth resizes and normalizes it to a 224x224 RGB format required by the Vision Transformer.
+2. **Local Inference**: The browser-based ONNX runtime executes the model weights on your local CPU or GPU (via WebGL/WebGPU if available).
+3. **Probability Scoring**: The model outputs a probability distribution across two labels: `Real` and `Deepfake`.
+4. **Verdict Generation**: Based on the primary score and a confidence threshold, the UI displays a detailed analysis of the image's authenticity.
 
 ---
 
