@@ -1,4 +1,4 @@
-# ◈ PixelTruth: Browser-Native Image Authenticity Analysis
+# ◈ PixelTruth: Browser-Native Image Authenticity Analysis!
 
 PixelTruth is an advanced, high-performance web application designed for the decentralised detection of AI-generated imagery. Utilizing state-of-the-art Vision Transformers (ViT) and optimized ONNX runtimes, it provides enterprise-grade image verification without the need for server-side processing or external API dependencies.
 
